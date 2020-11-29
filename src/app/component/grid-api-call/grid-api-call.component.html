@@ -1,0 +1,15 @@
+<p>grid-api-call</p>
+<!-- ag-grid component can accept two property bindings (rowData & columnsDefs), as well as the standard DOM style & class
+async is used because when rowData is retrieved externally it becomes an Observable (HTTP request performed).
+#agGird - allows us to access the grid component by using the component instance.
+-->
+<button (click)="getSelectedRows()">Get Selected Rows</button>
+<ag-grid-angular
+  #agGrid
+  style="width:750px; height:750px;"
+  class="ag-theme-alpine"
+  [rowData]="rowData | async"
+  [columnDefs]="columnDefs"
+  rowSelection="multiple"
+>
+</ag-grid-angular>
